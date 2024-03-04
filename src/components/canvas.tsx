@@ -106,7 +106,7 @@ export const Canvas = () => {
   }, []);
 
   return (
-    <>
+    <div className="mt-4">
       <ReactP5Wrapper sketch={sketch} userColor={userColor} />
       <RadioGroup
         defaultValue="w"
@@ -126,6 +126,6 @@ export const Canvas = () => {
           <Label htmlFor="r">Red</Label>
         </div>
       </RadioGroup>
-    </>
+    </div>
   );
 };
