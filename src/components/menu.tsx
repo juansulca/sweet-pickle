@@ -10,7 +10,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function Menu() {
+export function Menu({ onClickCanvas, onClickConfigure }: { onClickCanvas: () => void, onClickConfigure: () => void }) {
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -28,8 +28,8 @@ export function Menu() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Canvas</Button>
-        <Button>Configure</Button>
+        <Button variant="outline" onClick={onClickCanvas}>Canvas</Button>
+        <Button onClick={onClickConfigure}>Configure</Button>
       </CardFooter>
     </Card>
   )

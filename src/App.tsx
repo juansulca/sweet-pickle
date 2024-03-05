@@ -4,15 +4,18 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { useState } from "react";
 
 function App() {
   const queryClient = new QueryClient();
+  const [page, setPage] = useState('menu');
+  const [deviceId, setDeviceId] = useState('');
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="w-screen h-screen flex flex-col items-center justify-center">
-        <Menu />
-        <Canvas />
+        {page === 'menu' && <Menu onClickCanvas={() => setPage('canvas')} onClickConfigure={() => setPage('config')}/>}
+        {page === 'canvas' && <Canvas />}
       </div>
     </QueryClientProvider>
   );
