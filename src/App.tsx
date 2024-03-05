@@ -9,7 +9,7 @@ import { useState } from "react";
 function App() {
   const queryClient = new QueryClient();
   const [page, setPage] = useState('menu');
-  const [deviceId, setDeviceId] = useState('');
+  //const [deviceId, setDeviceId] = useState('');
 
   return (
     <QueryClientProvider client={queryClient}>
